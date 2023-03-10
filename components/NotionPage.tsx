@@ -17,10 +17,10 @@ import * as types from '@/lib/types'
 import { mapImageUrl } from '@/lib/map-image-url'
 import { getCanonicalPageUrl, mapPageUrl } from '@/lib/map-page-url'
 import { searchNotion } from '@/lib/search-notion'
-import { useDarkMode } from '@/lib/use-dark-mode'
+// import { useDarkMode } from '@/lib/use-dark-mode'
 
 import { Footer } from './Footer'
-import { GitHubShareButton } from './GitHubShareButton'
+// import { GitHubShareButton } from './GitHubShareButton'
 import { Loading } from './Loading'
 import { NotionPageHeader } from './NotionPageHeader'
 import { Page404 } from './Page404'
@@ -172,7 +172,7 @@ export const NotionPage: React.FC<types.PageProps> = ({
   // lite mode is for oembed
   const isLiteMode = lite === 'true'
 
-  const { isDarkMode } = useDarkMode()
+  // const { isDarkMode } = useDarkMode()
 
   const siteMapPageUrl = React.useMemo(() => {
     const params: any = {}
@@ -253,15 +253,17 @@ export const NotionPage: React.FC<types.PageProps> = ({
         url={canonicalPageUrl}
       />
 
-      {isLiteMode && <BodyClassName className='notion-lite' />}
-      {isDarkMode && <BodyClassName className='dark-mode' />}
+      {/* {isLiteMode && <BodyClassName className='notion-lite' />}
+      {isDarkMode && <BodyClassName className='dark-mode' />} */}
+
+      <BodyClassName className='dark-mode' />
 
       <NotionRenderer
         bodyClassName={cs(
           styles.notion,
           pageId === site.rootNotionPageId && 'index-page'
         )}
-        darkMode={isDarkMode}
+        darkMode={true}
         components={components}
         recordMap={recordMap}
         rootPageId={site.rootNotionPageId}
@@ -281,7 +283,7 @@ export const NotionPage: React.FC<types.PageProps> = ({
         footer={footer}
       />
 
-      <GitHubShareButton />
+      {/* <GitHubShareButton /> */}
     </>
   )
 }

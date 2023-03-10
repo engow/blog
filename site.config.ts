@@ -17,7 +17,7 @@ export default siteConfig({
   description: 'Blog of engow',
 
   // social usernames (optional)
-  twitter: 'engowz',
+  // twitter: 'engowz',
   github: 'engow',
   // linkedin: 'fisch2',
   // mastodon: '#', // optional mastodon profile URL, provides link verification
